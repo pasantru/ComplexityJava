@@ -7,13 +7,11 @@ public class Algoritmo {
     public Algoritmo() {
     }
 
-    public static void f(long var0) {
+    public static void f(long n) {
         long var2 = 0L;
-
-        for(int var4 = 0; (long)var4 < var0; ++var4) {
-            for(int var5 = 0; (long)var5 < var0; ++var5) {
-                ++var2;
-            }
-        }
+        for(int i = 0; i < n; i++)
+            for(int j = 0; j < n; j++)
+                for(int k = 0; k < n; k++)
+                    var2++;
     }
 }
