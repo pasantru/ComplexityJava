@@ -16,11 +16,11 @@ public class Analizador {
 	public static String masCercano(double ratio) {
 			if (ratio < 1) {                      // aprox 1.0
 				return "1";
-			} else if (1 <= ratio && ratio < 1.5) { // aprox 2.0
+			} else if (1 <= ratio && ratio < 2.4) { // aprox 2.0
 				return "N";
-			} else if (1.5 <= ratio && ratio < 3.2) { // aprox 4.0
+			} else if (2.4 <= ratio && ratio < 4.32) { // aprox 4.0
 				return "N2";
-			} else if (3.2 <= ratio && ratio < 9) { // aprox 8.0
+			} else if (4.32 <= ratio && ratio < 9) { // aprox 8.0
 				return "N3";
 			} else { 								 // otras
 				return "NF";
@@ -39,7 +39,7 @@ public class Analizador {
 		return Math.abs(retValue);
 	}
 	public static void main(String arg[]) {
-		int[] n = {1, 2, 3, 4, 10, 20, 40, 80, 100, 200, 400, 800, 1000, 2000, 4000, 8000,
+		int[] n = {1, 2, 3, 4, 10, 20, 40, 80, 100, 200, 400, 800, 1000, 4000, 4000, 8000,
 				10000, 20000, 30000, 60000};
 		int i = 0, arrLen = n.length;
 		Temporizador t = new Temporizador();
@@ -49,9 +49,9 @@ public class Analizador {
 		long maxTime = 10000000000L;
 
 		//Test the time for an algorithm and limit the array size to execute
-		long testTime1 = execution(t,n[0],1);
-		long testTime2 = execution(t, n[2], 1);
-		arrLen -= 6;
+		long testTime1 = execution(t,n[1],1);
+		long testTime2 = execution(t, n[6], 1);
+		if (testTime2-testTime1 > 500000) arrLen -= 8;
 		//TODO make a value to limit the numbers that the arguments can take depending on the complexity it has
 		//Start the complexity check
 		do{
